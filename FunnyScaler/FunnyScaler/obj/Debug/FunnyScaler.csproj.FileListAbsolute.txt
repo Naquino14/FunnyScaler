@@ -7,4 +7,4 @@ D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.csp
 D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.csproj.CoreCompileInputs.cache
 D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.exe
 D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.pdb
-D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.Form1.resources
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.MainPage.resources
