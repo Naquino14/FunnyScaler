@@ -1,0 +1,10 @@
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\bin\Debug\FunnyScaler.exe.config
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\bin\Debug\FunnyScaler.exe
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\bin\Debug\FunnyScaler.pdb
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.csprojAssemblyReference.cache
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.Properties.Resources.resources
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.csproj.GenerateResource.cache
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.csproj.CoreCompileInputs.cache
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.exe
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.pdb
+D:\CSharp Projects\FunnyScaler\FunnyScaler\FunnyScaler\obj\Debug\FunnyScaler.Form1.resources

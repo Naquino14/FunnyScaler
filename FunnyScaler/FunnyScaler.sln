@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnyScaler", "FunnyScaler\FunnyScaler.csproj", "{07A685F9-4A3E-4ED2-80A2-6117BBD4A059}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07A685F9-4A3E-4ED2-80A2-6117BBD4A059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A685F9-4A3E-4ED2-80A2-6117BBD4A059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A685F9-4A3E-4ED2-80A2-6117BBD4A059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A685F9-4A3E-4ED2-80A2-6117BBD4A059}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18DFA6C7-B7DF-41D9-B3E1-DDE11CE44882}
+	EndGlobalSection
+EndGlobal
