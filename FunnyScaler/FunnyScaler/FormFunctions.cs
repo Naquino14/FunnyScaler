@@ -60,7 +60,7 @@ namespace FunnyScaler
         private TextBox outputPathLabel;
         private TextBox inputPathLabel;
         private ErrorProvider errorProvider;
-        private Button inpuDirButton;
+        private Button inputDirButton;
         private Button outputDirButton;
         private PictureBox inputPicture;
 
@@ -73,6 +73,7 @@ namespace FunnyScaler
             inputPathLabel = IPL;
             inputPathLabel.ReadOnly = true; // force on
             errorProvider = EPV;
+            inputDirButton = IDB;
             outputDirButton = ODB;
             inputPicture = IPB;
         }
@@ -113,13 +114,13 @@ namespace FunnyScaler
                     if (!moveAlong)
                     {
                         // open dialog saying invalid file type
-                        errorProvider.SetError(inpuDirButton, "Invalid File Type.");
+                        errorProvider.SetError(inputDirButton, "Invalid File Type.");
                         isError = true;
                     }
                     else if (moveAlong)
                     {
                         targetFileStringR = openFileDialog.FileName;
-                        errorProvider.SetError(inpuDirButton, "");
+                        errorProvider.SetError(inputDirButton, null);
                         isError = false;
                         Image imageRead = Image.FromFile(targetFileStringR);
                         inputPicture.Image = imageRead;
