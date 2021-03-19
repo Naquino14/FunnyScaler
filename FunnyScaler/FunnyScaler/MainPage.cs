@@ -21,12 +21,17 @@ namespace FunnyScaler
             InitializeComponent();
             mainFF = new FormFunctions();
             mainFF.Init(outputPathLabel,
-                inputPathLabel, 
+                inputPathLabel,
                 errorProvider,
                 inpuDirButton,
                 outputDirButton,
-                inputPicture
-                );
+                inputPicture,
+                trainingPathLabel,
+                trainingButton,
+                detectGPUButton,
+                useGPUTextbox,
+                helpButton
+                ); ;
         }
 
 
@@ -38,5 +43,7 @@ namespace FunnyScaler
         private void button1_Click(object sender, EventArgs e) => mainFF.SelectFileOnClick();
         private void outputDirButton_Click(object sender, EventArgs e) => mainFF.SelectOutputOnClick();
         private void upscaleButton_Click(object sender, EventArgs e) => mainFF.UpscaleOnClick();
+        private void helpButton_Click(object sender, EventArgs e) => mainFF.HelpOnClick();
+        private void trainingButton_Click(object sender, EventArgs e) => mainFF.TrainingPathOnClick();
     }
 }

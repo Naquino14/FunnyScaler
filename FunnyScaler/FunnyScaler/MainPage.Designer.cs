@@ -35,6 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageUpscaler = new System.Windows.Forms.TabPage();
+            this.outputPathLabel = new System.Windows.Forms.TextBox();
             this.inputPathLabel = new System.Windows.Forms.TextBox();
             this.lengthSelect = new System.Windows.Forms.RadioButton();
             this.heightSelect = new System.Windows.Forms.RadioButton();
@@ -50,12 +51,21 @@
             this.textInputImage = new System.Windows.Forms.Label();
             this.inputPicture = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.trainingPathLabel = new System.Windows.Forms.TextBox();
+            this.useGPUTextbox = new System.Windows.Forms.CheckBox();
+            this.trainingButton = new System.Windows.Forms.Button();
+            this.detectGPUButton = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.outputPathLabel = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageUpscaler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outputPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputPicture)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +103,13 @@
             this.tabPageUpscaler.TabIndex = 0;
             this.tabPageUpscaler.Text = "Upscaler";
             this.tabPageUpscaler.UseVisualStyleBackColor = true;
+            // 
+            // outputPathLabel
+            // 
+            this.outputPathLabel.Location = new System.Drawing.Point(455, 44);
+            this.outputPathLabel.Name = "outputPathLabel";
+            this.outputPathLabel.Size = new System.Drawing.Size(266, 22);
+            this.outputPathLabel.TabIndex = 16;
             // 
             // inputPathLabel
             // 
@@ -223,6 +240,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -231,16 +250,80 @@
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.helpButton);
+            this.groupBox2.Location = new System.Drawing.Point(9, 98);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(304, 58);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Help";
+            // 
+            // helpButton
+            // 
+            this.helpButton.Location = new System.Drawing.Point(6, 21);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(291, 23);
+            this.helpButton.TabIndex = 0;
+            this.helpButton.Text = "Open an issue on Github.";
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.trainingPathLabel);
+            this.groupBox1.Controls.Add(this.useGPUTextbox);
+            this.groupBox1.Controls.Add(this.trainingButton);
+            this.groupBox1.Controls.Add(this.detectGPUButton);
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(305, 85);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Training";
+            // 
+            // trainingPathLabel
+            // 
+            this.trainingPathLabel.Location = new System.Drawing.Point(6, 50);
+            this.trainingPathLabel.Name = "trainingPathLabel";
+            this.trainingPathLabel.ReadOnly = true;
+            this.trainingPathLabel.Size = new System.Drawing.Size(188, 22);
+            this.trainingPathLabel.TabIndex = 4;
+            // 
+            // useGPUTextbox
+            // 
+            this.useGPUTextbox.AutoCheck = false;
+            this.useGPUTextbox.AutoSize = true;
+            this.useGPUTextbox.Location = new System.Drawing.Point(202, 50);
+            this.useGPUTextbox.Name = "useGPUTextbox";
+            this.useGPUTextbox.Size = new System.Drawing.Size(89, 21);
+            this.useGPUTextbox.TabIndex = 3;
+            this.useGPUTextbox.Text = "Use GPU";
+            this.useGPUTextbox.UseVisualStyleBackColor = true;
+            // 
+            // trainingButton
+            // 
+            this.trainingButton.Location = new System.Drawing.Point(4, 21);
+            this.trainingButton.Name = "trainingButton";
+            this.trainingButton.Size = new System.Drawing.Size(190, 23);
+            this.trainingButton.TabIndex = 1;
+            this.trainingButton.Text = "Choose Training Data Path";
+            this.trainingButton.UseVisualStyleBackColor = true;
+            this.trainingButton.Click += new System.EventHandler(this.trainingButton_Click);
+            // 
+            // detectGPUButton
+            // 
+            this.detectGPUButton.Location = new System.Drawing.Point(202, 21);
+            this.detectGPUButton.Name = "detectGPUButton";
+            this.detectGPUButton.Size = new System.Drawing.Size(89, 23);
+            this.detectGPUButton.TabIndex = 2;
+            this.detectGPUButton.Text = "Detect Gpu";
+            this.detectGPUButton.UseVisualStyleBackColor = true;
+            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // textBox1
-            // 
-            this.outputPathLabel.Location = new System.Drawing.Point(455, 44);
-            this.outputPathLabel.Name = "textBox1";
-            this.outputPathLabel.Size = new System.Drawing.Size(266, 22);
-            this.outputPathLabel.TabIndex = 16;
             // 
             // MainPage
             // 
@@ -260,6 +343,10 @@
             this.tabPageUpscaler.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outputPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputPicture)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -286,6 +373,13 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.TextBox inputPathLabel;
         private System.Windows.Forms.TextBox outputPathLabel;
+        private System.Windows.Forms.Button trainingButton;
+        private System.Windows.Forms.CheckBox useGPUTextbox;
+        private System.Windows.Forms.Button detectGPUButton;
+        private System.Windows.Forms.TextBox trainingPathLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button helpButton;
     }
 }
 

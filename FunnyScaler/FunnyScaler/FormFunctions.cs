@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace FunnyScaler
 {
@@ -53,8 +54,12 @@ namespace FunnyScaler
         public OutputType outputType;
         public FileStream outputFileStream;
 
+        public string trainingPath;
+        public FileStream trainingFileStream;
+
         OpenFileDialog openFileDialog = new OpenFileDialog();
         SaveFileDialog saveFileDialog = new SaveFileDialog();
+        FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
 
         // migrate stuff from MainPage.cs
         private TextBox outputPathLabel;
@@ -63,8 +68,27 @@ namespace FunnyScaler
         private Button inputDirButton;
         private Button outputDirButton;
         private PictureBox inputPicture;
+        private TextBox trainingPathLabel;
+        private Button trainingDirButton;
+        private Button detectGPUButton;
+        private CheckBox useGPUCheckbox;
+        private Button helpButton;
 
-        public void Init(TextBox OPL, TextBox IPL, ErrorProvider EPV, Button IDB, Button ODB, PictureBox IPB)
+        private bool saveLocationSelected = false;
+
+        public void Init(
+            TextBox OPL, 
+            TextBox IPL, 
+            ErrorProvider EPV, 
+            Button IDB, 
+            Button ODB, 
+            PictureBox IPB, 
+            TextBox TPL,
+            Button TDB,
+            Button DGB,
+            CheckBox UGT,
+            Button HBT
+            )
         {
             InitExtensionArray();
 
@@ -76,6 +100,12 @@ namespace FunnyScaler
             inputDirButton = IDB;
             outputDirButton = ODB;
             inputPicture = IPB;
+            trainingPathLabel = TPL;
+            trainingPathLabel.ReadOnly = true;
+            trainingDirButton = TDB;
+            detectGPUButton = DGB;
+            useGPUCheckbox = UGT;
+            helpButton = HBT;
         }
 
         public void InitExtensionArray()
@@ -142,11 +172,13 @@ namespace FunnyScaler
         {
             try
             {
+                saveFileDialog.Filter = "Jpeg Image (*.jpg)|*.jpg|Png Image (*.png)|*.png";
+                saveFileDialog.DefaultExt = ".jpg";
+                saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+                saveFileDialog.Title = "Select output file name and location.";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    saveFileDialog.Filter = "JPeg Image (*.jpg)|*.jpg|Png Image (*.png)|*.png";
-                    saveFileDialog.Title = "Select output file name and location.";
-
                     if (saveFileDialog.FileName != "")
                     {
                         FileStream fileStream = (FileStream)saveFileDialog.OpenFile(); // cast is not redundant
@@ -166,6 +198,7 @@ namespace FunnyScaler
                         targetFileStringW = saveFileDialog.FileName;
                         outputPathLabel.Text = targetFileStringW;
                         string _name = saveFileDialog.FileName.Split('\\')[saveFileDialog.FileName.Split('\\').Length - 1]; // LMAOOOOO
+                        saveLocationSelected = true;
                         MessageBox.Show("Set save location for: " + _name + ".", "Set Location.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } // DO NOT CLOSE FILESTREAM HERE!
                 }
@@ -179,15 +212,16 @@ namespace FunnyScaler
 
         public void UpscaleOnClick()
         {
-            if (targetImageR == null)
+            if (!saveLocationSelected)
             {
+                MessageBox.Show("Select a save Location!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 errorProvider.SetError(outputDirButton, "Set a save location!");
                 return;
             }
             // do stuff
         }
 
-        private Image ConvertToPng(Image input)
+        private Image ConvertToPng(Image input) // tbh this prob doesnt do anything
         {
             try // convert to jpeg. idk if this will work properly
             {
@@ -205,6 +239,24 @@ namespace FunnyScaler
                 MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
                 return null;
+            }
+        }
+
+        public void HelpOnClick() => Process.Start("https://github.com/Naquino14/FunnyScaler");
+
+        public void TrainingPathOnClick()
+        {
+            // open dialog for the path and store it as a filestream? and a path
+            try
+            {
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    trainingPath = folderBrowserDialog.SelectedPath;
+                    trainingPathLabel.Text = trainingPath;
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
